@@ -12,7 +12,31 @@ Re-mould it nearer to the Heart's Desire!";
 
 int strindex(const char source[], char pattern[])
 {
-    // TODO: write your code here
+    int i, j;
+    int rightmost = -1;
+
+    if (source == NULL || pattern == NULL || pattern[0] == '\0')
+    {
+        return -1;
+    }
+
+    for (i = 0; source[i] != '\0'; i++)
+    {
+        for (j = 0;
+             pattern[j] != '\0' &&
+             source[i + j] != '\0' &&
+             source[i + j] == pattern[j];
+             j++)
+        {
+        }
+
+        if (pattern[j] == '\0')
+        {
+            rightmost = i;
+        }
+    }
+
+    return rightmost;
 }
 
 // DO NOT change the code below
